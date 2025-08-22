@@ -4,11 +4,10 @@ import os
 
 
 def generate_response(prompt):
-    client = Groq()
+    client = Groq(api_key = os.getenv("GROQ_API_KEY"))
 
     completion = client.chat.completions.create(
         model="qwen/qwen3-32b",
-        api_key = os.getenv("GROQ_API_KEY"),
         messages = [
             {
                 "role": "user",
