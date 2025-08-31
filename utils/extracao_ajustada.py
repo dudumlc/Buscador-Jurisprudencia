@@ -63,7 +63,16 @@ def extracao_infos2(pasta, arquivo_resultado):
     if df_novo.empty:
         return 'Todos os arquivos já haviam sido lidos.'
     else:
+        # ACRESCENTAR O LINK DO PDF
         df_novo['LINK'] = 'https://processo.stj.jus.br/SCON/GetPDFINFJ?edicao=' + df_novo['ARQUIVO'].str.replace('Inf','').str.replace('.pdf','')
+
+        # SEGREGAR O RAMO DO DIREITO EM VÁRIAS LINHAS 
+        df_novo['RAMO_AJUSTE'] = df_novo['RAMO_DO_DIREITO'].str.split(',')
+        df_novo = df_novo.explode('RAMO_AJUSTE').reset_index(drop=True)
+        df_novo = df_novo.drop('RAMO_DO_DIREITO',axis=1)
+        df_novo = df_novo.rename(columns={'RAMO_AJUSTE':'RAMO_DO_DIREITO'})
+
+        # JUNTAR OS ARQUIVOS JÁ LIDOS COM AS NOVAS EXTRAÇÕES
         df_final = pd.concat([df_lido, df_novo])
         df_final.to_excel("output/jurisprudencia_extraida.xlsx", index=False)
         return 'Arquivo jurisprudencia_extraida.xlsx atualizado com as informações dos novos PDFs.'
