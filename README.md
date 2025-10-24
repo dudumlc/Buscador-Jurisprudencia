@@ -38,11 +38,10 @@ Essa abordagem permite transformar grandes volumes de texto jurídico em conheci
 
 A estrutura de pastas deste repositório foi organizada para manter o projeto limpo e modular. Cada diretório principal contém um arquivo `README.md` que detalha seu propósito específico.
 
-- `data/`: Contém os datasets brutos, processados e externos.
-- `notebooks/`: Notebooks Jupyter para exploração de dados, modelagem e análise.
-- `outputs/`: Documentação do projeto, relatórios e apresentações.
+- `data/`: Contém todos os PDFs brutos utilizados nesse projeto.
+- `notebooks/`: Notebooks Jupyter para exploração de dados e testes de desenvolvimento.
+- `outputs/`: Dataframe gerado após extração de texto dos PDFs.
 - `src/`: Código fonte, scripts e módulos reutilizáveis.
-- `results/`: Resultados finais, como submissões, visualizações e modelos treinados.
 
 ## Como Começar
 
