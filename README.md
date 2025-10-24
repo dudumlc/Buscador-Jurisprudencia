@@ -16,13 +16,13 @@ O JurisAI realiza três etapas principais:
 ### 1. Leitura e extração automática de informações:
 O sistema percorre diversos informativos de jurisprudência e utiliza expressões regulares (Regex) para capturar dados relevantes, como:
 
-PROCESSO
-TEMA
-DESTAQUE
-ARQUIVO
-LINK
-INTEIRO_TEOR
-RAMO_DO_DIREITO
+- PROCESSO
+- TEMA
+- DESTAQUE
+- ARQUIVO
+- LINK
+- INTEIRO_TEOR
+- RAMO DO DIREITO
 
 ### 2. Estruturação dos dados:
 Após a extração, as informações são tabuladas em um formato estruturado (DataFrame) para facilitar consultas e análises posteriores.
@@ -39,8 +39,8 @@ Essa abordagem permite transformar grandes volumes de texto jurídico em conheci
 A estrutura de pastas deste repositório foi organizada para manter o projeto limpo e modular. Cada diretório principal contém um arquivo `README.md` que detalha seu propósito específico.
 
 - `data/`: Contém os datasets brutos, processados e externos.
-- `docs/`: Documentação do projeto, relatórios e apresentações.
 - `notebooks/`: Notebooks Jupyter para exploração de dados, modelagem e análise.
+- `outputs/`: Documentação do projeto, relatórios e apresentações.
 - `src/`: Código fonte, scripts e módulos reutilizáveis.
 - `results/`: Resultados finais, como submissões, visualizações e modelos treinados.
 
